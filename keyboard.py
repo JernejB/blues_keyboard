@@ -29,7 +29,7 @@ def play_chord(start, fs, rNote, pitch=0, settings=[0,0,0]):
 fs = fluidsynth.Synth(0.2,48000)
 fs.start('alsa')
 # Set instrument
-inst = fs.sfload("/home/jernej/Documents/Python/keyboard/yamahagrandpiano44.sf2")
+inst = fs.sfload("yamahagrandpiano44.sf2")
 
 fs.program_select(0, inst, 0, 0)
 
