@@ -4,7 +4,7 @@ from pygame.locals import *
 import fluidsynth
 
 # Pro scale generator
-def pitch(tone):
+def generate_scale(tone):
     return [tone,tone+3,tone+5,tone+6,tone+7,tone+10,tone+11,tone+12]
 
 # TODO: plays a chord with root note. More options (in list?)?
@@ -39,9 +39,26 @@ pygame.init()
 
 running = True
 # WIP
-bTone = pitch(50)
-mTone = pitch(50+12)
-hTone = pitch(50+24)
+bTone = generate_scale(50)    # Bass
+mTone = generate_scale(50+12) # Mid
+hTone = generate_scale(50+24) # High
+
+## Key bindings
+
+## A,S,D,F = chords; default: root + fifth
+## Q,W,E,R = major
+## Y,X,C,V = minor
+## SHIFT   = seventh chord modifier?
+#  A ... I
+#  S ... IV
+#  D ... V
+#  F ... uhh...chord that falls down to dominant?
+
+## G-Ž = blues scale
+#  Z ... Supertonic
+#  U ... Mediant
+#  O ... Submediant flat?
+
 while running:
     for event in pygame.event.get():
         if event.type == KEYDOWN:
